@@ -101,9 +101,10 @@ app.get("/auth/google/secrets",
 app.get('/auth/facebook', passport.authenticate('facebook'));
 
 app.get('/auth/facebook/secrets',
-  passport.authenticate('facebook', { successRedirect: '/secrets',
-                                      failureRedirect: '/login' }))
-
+  passport.authenticate('facebook',
+  { successRedirect: '/secrets',
+    failureRedirect: '/login'
+  }))
 
 app.get("/login", function(req, res){
   res.render("login")
